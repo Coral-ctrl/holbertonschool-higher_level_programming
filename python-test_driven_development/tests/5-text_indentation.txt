@@ -93,7 +93,7 @@ Test
 
 Test with spaces at beginning
 >>> text_indentation("   Hello. World")
-   Hello.
+Hello.
 <BLANKLINE>
 World
 
