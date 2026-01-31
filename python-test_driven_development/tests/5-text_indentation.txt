@@ -1,0 +1,127 @@
+=====================================
+Tests for text_indentation function
+=====================================
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test basic sentence with period
+>>> text_indentation("Hello. World")
+Hello.
+<BLANKLINE>
+World
+
+Test with question mark
+>>> text_indentation("How are you? I am fine")
+How are you?
+<BLANKLINE>
+I am fine
+
+Test with colon
+>>> text_indentation("Title: Content here")
+Title:
+<BLANKLINE>
+Content here
+
+Test with all three delimiters
+>>> text_indentation("First. Second? Third: Fourth")
+First.
+<BLANKLINE>
+Second?
+<BLANKLINE>
+Third:
+<BLANKLINE>
+Fourth
+
+Test with spaces after delimiters (should be removed)
+>>> text_indentation("Hello.    World")
+Hello.
+<BLANKLINE>
+World
+
+Test with multiple spaces after delimiter
+>>> text_indentation("Test?     Another test")
+Test?
+<BLANKLINE>
+Another test
+
+Test with no delimiters
+>>> text_indentation("Hello World")
+Hello World
+
+Test with only delimiters
+>>> text_indentation("?.:")
+?
+<BLANKLINE>
+.
+<BLANKLINE>
+:
+<BLANKLINE>
+
+Test with empty string
+>>> text_indentation("")
+
+Test with only spaces
+>>> text_indentation("   ")
+   
+
+Test TypeError: text is an integer
+>>> text_indentation(123)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+Test TypeError: text is None
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+Test TypeError: text is a list
+>>> text_indentation(["Hello"])
+Traceback (most recent call last):
+TypeError: text must be a string
+
+Test missing argument
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test with newlines in text
+>>> text_indentation("Hello\nWorld. Test")
+Hello
+World.
+<BLANKLINE>
+Test
+
+Test with spaces at beginning
+>>> text_indentation("   Hello. World")
+   Hello.
+<BLANKLINE>
+World
+
+Test consecutive delimiters with spaces
+>>> text_indentation("Hello.  ?  :")
+Hello.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+Test long text
+>>> text_indentation("Lorem ipsum. Dolor sit? Amet: consectetur")
+Lorem ipsum.
+<BLANKLINE>
+Dolor sit?
+<BLANKLINE>
+Amet:
+<BLANKLINE>
+consectetur
+
+Test with delimiter at end
+>>> text_indentation("Hello.")
+Hello.
+<BLANKLINE>
+
+Test with only delimiter and spaces
+>>> text_indentation(".   ")
+.
+<BLANKLINE>
