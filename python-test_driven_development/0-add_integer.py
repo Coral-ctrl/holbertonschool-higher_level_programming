@@ -14,7 +14,7 @@ def add_integer(a, b=98):
 
     Returns:
         The addition of a and b as an integer
-    
+
     Raises:
         TypeError: If a or b is not an integer or float
         OverflowError: If a or b is infinity
@@ -30,7 +30,7 @@ def add_integer(a, b=98):
         raise ValueError("cannot convert float NaN to integer")
     if isinstance(b, float) and b != b:
         raise ValueError("cannot convert float NaN to integer")
-    
+
     # Check for infinity
     if isinstance(a, float):
         if a == float('inf') or a == float('-inf'):
@@ -38,5 +38,5 @@ def add_integer(a, b=98):
     if isinstance(b, float):
         if b == float('inf') or b == float('-inf'):
             raise OverflowError("cannot convert float infinity to integer")
-    
+
     return int(a) + int(b)
