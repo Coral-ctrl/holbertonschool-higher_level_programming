@@ -16,6 +16,10 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     i = 0
+    # Skip leading spaces
+    while i < len(text) and text[i] == ' ':
+        i += 1
+
     while i < len(text):
         # Print current character
         print(text[i], end="")
