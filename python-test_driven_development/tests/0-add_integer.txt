@@ -27,3 +27,7 @@ TypeError: a must be an integer
 >>> add_integer(float('inf'), 5)
 Traceback (most recent call last):
 OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float('nan'), 5)
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
