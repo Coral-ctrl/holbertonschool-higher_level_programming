@@ -18,11 +18,11 @@ My name is Bob
 
 Test with empty strings
 >>> say_my_name("", "")
-My name is 
+My name is  
 
 Test with only spaces
 >>> say_my_name(" ", " ")
-My name is   
+My name is    
 
 Test with long names
 >>> say_my_name("Christopher", "Montgomery")
