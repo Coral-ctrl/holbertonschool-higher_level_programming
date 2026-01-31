@@ -5,6 +5,7 @@ Module that defines a matrix_divided function.
 The function divides all elements of a matrix.
 """
 
+
 def matrix_divided(matrix, div):
     """
     Divides all elements of a matrix by a divisor.
@@ -12,10 +13,10 @@ def matrix_divided(matrix, div):
     Args:
         matrix: List of lists of integers or floats
         div: Number to divide by (int or float)
-    
+
     Returns:
         New matrix with all elements divided by div, rounded to 2 decimals
-    
+
     Raises:
         TypeError: If matrix is not a list of lists of integers/floats
         TypeError: If rows have different sizes
@@ -23,20 +24,23 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: If div is 0
     """
 
+    # Error message for invalid matrix
+    error_msg = "matrix must be a matrix (list of lists) of integers/floats"
+
     # Check if matrix is a list
     if not isinstance(matrix, list) or len(matrix) == 0:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError(error_msg)
 
     # Check if matrix is a list of lists with valid elements
     row_length = None
     for row in matrix:
         if not isinstance(row, list) or len(row) == 0:
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError(error_msg)
 
         # Check if all elements are integers or floats
         for element in row:
             if not isinstance(element, (int, float)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError(error_msg)
 
         # Check if all rows have the same size
         if row_length is None:
