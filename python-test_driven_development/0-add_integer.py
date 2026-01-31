@@ -11,6 +11,13 @@ def add_integer(a, b=98):
     Adds two integers.
 
     Floats are cast to integers before addition
+
+    Returns:
+        The addition of a and b as an integer
+    
+    Raises:
+        TypeError: If a or b is not an integer or float
+        OverflowError: If a or b is infinity
     """
 
     if not isinstance(a, (int, float)):
@@ -19,9 +26,11 @@ def add_integer(a, b=98):
         raise TypeError("b must be an integer")
 
     # Reject NaN and infinity
-    if isinstance(a, float) and (math.isinf(a) or math.isnan(a)):
-        raise OverflowError("cannot convert float infinity to integer")
-    if isinstance(b, float) and (math.isinf(b) or math.isnan(b)):
-        raise OverflowError("cannot convert float infinity to integer")
+    if isinstance(a, float):
+        if a == float('inf') or a == float('-inf') or a != a:
+            raise OverflowError("cannot convert float infinity to integer")
+    if isinstance(b, float):
+        if b == float('inf') or b == float('-inf') or b != b:
+            raise OverflowError("cannot convert float infinity to integer")
     
     return int(a) + int(b)
