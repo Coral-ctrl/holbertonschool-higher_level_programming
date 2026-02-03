@@ -103,7 +103,7 @@ class Square:
             return
 
         # Print vertical offset (new lines)
-        for i in range9self.__position[1]):
+        for i in range(self.__position[1]):
             print()
 
         # Print each row with horizontal offset (spaces)
