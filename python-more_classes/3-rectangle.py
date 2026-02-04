@@ -102,7 +102,8 @@ class Rectangle:
         Return the string representation of the rectangle using '#'.
 
         Returns:
-            str: Rectangle drawn with '#', or empty string if width or height id 0.
+            str: Rectangle drawn with '#', or empty string if width
+                 or height id 0.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
