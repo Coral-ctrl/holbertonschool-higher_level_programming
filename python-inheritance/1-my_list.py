@@ -3,11 +3,11 @@
 Module that defines a custom list class with a sorted print method.
 """
 
+
 class MyList(list):
     """
     MyList class that inherits from the built-in list.
     """
-
 
     def print_sorted(self):
         """
