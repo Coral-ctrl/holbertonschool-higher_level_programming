@@ -63,10 +63,8 @@ def shape_info(shape):
     This function doesn't check the type of the shape. It simply calls
     the area() and perimeter() methods, trusting that the object has them.
     """
-    print(f"Shape: {shape.__class__.__name__}")
-    print(f"Area: {shape.area():.2f}")
-    print(f"Perimeter: {shape.perimeter():.2f}")
-    print()
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
 
 
 def main():
