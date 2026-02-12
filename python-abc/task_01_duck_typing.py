@@ -64,7 +64,7 @@ def shape_info(shape):
     the area() and perimeter() methods, trusting that the object has them.
     """
     try:
-        print(f"Area: {shape.area()}")
-        print(f"Perimeter: {shape.perimeter()}")
+        print("Area: {}".format(shape.area()))
+        print("Perimeter: {}".format(shape.perimeter()))
     except Exception:
         print("Shape information error")
