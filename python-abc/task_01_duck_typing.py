@@ -5,7 +5,6 @@ This module contains an abstract Shape class and two concrete
 implementations: Circle and Rectangle.
 """
 
-
 from abc import ABC, abstractmethod
 import math
 
