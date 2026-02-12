@@ -65,15 +65,3 @@ def shape_info(shape):
     """
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
-
-
-def main():
-    """Test the shape_info function with different shape instances."""
-    circle = Circle(radius=5)
-    rectangle = Rectangle(width=4, height=6)
-
-    shape_info(circle)
-    shape_info(rectangle)
-
-if __name__ == "__main__":
-    main()
