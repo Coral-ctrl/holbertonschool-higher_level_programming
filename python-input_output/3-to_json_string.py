@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import json
 """Module that contains a function that truns string to json."""
 
 
