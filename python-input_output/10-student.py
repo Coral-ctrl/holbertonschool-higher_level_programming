@@ -24,7 +24,6 @@ class Student:
         obj_dict = self.__dict__.copy()
 
         if isinstance(attrs, list) and all(isinstance(a, str) for a in attrs):
-            filtered_dict = {key: value for key, value in obj_dict.items() if key in attrs}
+            filtered_dict = {k: v for k, v in obj_dict.items() if k in attrs}
             return filtered_dict
         return obj_dict
-
