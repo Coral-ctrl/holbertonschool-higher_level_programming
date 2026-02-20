@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Module that contains functions for serialization and deserialization
-using XML as an alternative format to JSON/
+using XML as an alternative format to JSON.
 """
 import xml.etree.ElementTree as ET
 
@@ -17,13 +17,12 @@ def serialize_to_xml(dictionary, filename):
 
     # Add dictionary items as child elements
     for key, value in dictionary.items():
-        child = Et.SubElement(root, key)
+        child = ET.SubElement(root, key)
         child.text = str(value)
 
     # Create tree and write to file
     tree = ET.ElementTree(root)
-    ET.indent(tree, space="    ")
-    tree.write(filename, encoding="unicode", xml_declaration=False)
+    tree.write(filename, encoding="utf-8", xml_declaration=True)
 
 def deserialize_from_xml(filename):
     """
