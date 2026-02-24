@@ -15,7 +15,7 @@ users = {}
 @app.route("/")
 def home():
     """function that returns message to display in browser"""
-    return "<p>Welcome to the Flask API!</p>"
+    return "Welcome to the Flask API!"
 
 @app.route("/data")
 def data():
