@@ -2,13 +2,14 @@
 """Module that develop Simple API with Flask"""
 
 
-from flask import Flask
-from flask import jsonify
+from flask import Flask, jsonify, request
 
 # Create an instance of class Flask
 # argument: name of application's module or package
 # so Flask knows where to look for resources like templates
 app = Flask(__name__)
+
+users = {}
 
 # route decorator to tell Flask what URL should trigger function
 @app.route("/")
@@ -18,7 +19,7 @@ def home():
 
 @app.route("/data")
 def data():
-    return jsonify(list(users.key()))
+    return jsonify(list(users.keys()))
 
 @app.route("/status")
 def status():
