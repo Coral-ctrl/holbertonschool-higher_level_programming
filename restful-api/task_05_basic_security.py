@@ -133,5 +133,5 @@ def handle_fresh_token_required(err):
 
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     app.run()
