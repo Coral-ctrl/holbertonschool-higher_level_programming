@@ -9,7 +9,7 @@ from flask_jwt_extended import (
     JWTManager,
     create_access_token,
     jwt_required,
-    get_jwt_identidy
+    get_jwt_identity
 )
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -20,7 +20,7 @@ app = Flask(__name__)
 app.config["JWT_SECRET_KEY"] = "12345678"
 
 auth = HTTPBasicAuth()
-jwt = jwTManager(app)
+jwt = JWTManager(app)
 
 # In-memory users storage
 users = {
@@ -39,7 +39,7 @@ users = {
 # BASIC AUTHENTICATION
 # =======================
 
-@auth.verify_passwrod
+@auth.verify_password
 def verify_password(username, password):
     if username in users:
         user = users.get(username)
