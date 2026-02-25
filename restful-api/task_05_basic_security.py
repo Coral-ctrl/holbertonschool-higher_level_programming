@@ -9,7 +9,7 @@ from flask_jwt_extended import (
     JWTManager,
     create_access_token,
     jwt_required,
-    get_jwt_identity
+    get_jwt
 )
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -42,7 +42,7 @@ users = {
 @auth.verify_password
 def verify_password(username, password):
     user = users.get(username)
-    if user and check_password_hash(user.get("username"), password):
+    if user and check_password_hash(user.get("password"), password):
         return username
     return None
 
@@ -70,7 +70,7 @@ def login():
     username = data.get("username")
     password = data.get("password")
 
-    if username in users and check-password_hash(
+    if username in users and check_password_hash(
             users[username]["password"], password
     ):
         additional_claims = {"role": users[username]["role"]}
