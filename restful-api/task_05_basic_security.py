@@ -41,10 +41,9 @@ users = {
 
 @auth.verify_password
 def verify_password(username, password):
-    if username in users:
-        user = users.get(username)
-        if check_password_hash(user.get("username"), password):
-            return username
+    user = users.get(username)
+    if user and check_password_hash(user.get("username"), password):
+        return username
     return None
 
 @auth.error_handler
