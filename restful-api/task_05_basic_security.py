@@ -17,7 +17,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 
 # Secret key for JWT
-app.config["JWT_SECRET_KEY"] = "12345678"
+app.config["JWT_SECRET_KEY"] = "nej3heygfef3fjef8"
 
 auth = HTTPBasicAuth()
 jwt = JWTManager(app)
