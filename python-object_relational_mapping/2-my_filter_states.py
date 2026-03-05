@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Script that takes in an argument and displays all values in the states
-table of hbtn_0e_0_usa where name matches the argument.
+Script that takes in an argument and displays all values in the
+states table of hbtn_0e_0_usa where name matches the argument.
 """
 
 import MySQLdb
@@ -20,7 +20,8 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
 
-    # Create a cursor object that sends SQL commands and receives results
+    # Create a cursor object that sends SQL commands
+    # and receives results
     cursor = db.cursor()
     # Execute query
     cursor.execute(
