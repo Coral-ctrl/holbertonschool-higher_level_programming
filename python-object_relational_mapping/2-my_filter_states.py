@@ -6,9 +6,8 @@ states table of hbtn_0e_0_usa where name matches the argument.
 import MySQLdb
 import sys
 
-if __name__ == "__main__":
-    search = sys.argv[4]
 
+if __name__ == "__main__":
     # Connect to MySQL server
     db = MySQLdb.connect(
         host="localhost",
@@ -22,9 +21,10 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute query
-    query = ("SELECT * FROM states WHERE name = '{}' "
-             "ORDER BY states.id ASC".format(search))
-    cursor.execute(query)
+    cursor.execute(
+        "SELECT * FROM states WHERE name = '{}' "
+        "ORDER BY states.id ASC".format(sys.argv[4])
+    )
 
     # Fetch and display results
     rows = cursor.fetchall()
