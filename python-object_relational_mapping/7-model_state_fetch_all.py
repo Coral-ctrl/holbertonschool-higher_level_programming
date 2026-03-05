@@ -15,6 +15,9 @@ if __name__ == "__main__":
         pool_pre_ping=True
     )
 
+    # Binds the engine directly to the metadata object,
+    # so Base.metadata "knows" which database to talk to without
+    # needing to pass the engine explicitly every time.
     Base.metadata.bind = engine
 
     # Create session factory bound to the engine, then open a session
