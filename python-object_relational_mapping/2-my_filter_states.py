@@ -6,7 +6,6 @@ states table of hbtn_0e_0_usa where name matches the argument.
 import MySQLdb
 import sys
 
-
 if __name__ == "__main__":
     search = sys.argv[4]
 
@@ -19,8 +18,7 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
 
-    # Create a cursor object that sends SQL commands
-    # and receives results
+    # Create a cursor object that sends SQL commands and receives results
     cursor = db.cursor()
 
     # Execute query
