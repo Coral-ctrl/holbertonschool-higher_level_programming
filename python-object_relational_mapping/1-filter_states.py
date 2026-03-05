@@ -21,7 +21,9 @@ if __name__ == "__main__":
     # Create a cursor object that sends SQL commands and receives results
     cursor = db.cursor()
     # Execute query
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    cursor.execute(
+        "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+    )
     # Fetch and display results
     rows = cursor.fetchall()
     for row in rows:
