@@ -24,8 +24,8 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute query
-    query = ("SELECT * FROM states WHERE name = '{}' "
-             "ORDER BY id ASC".format(search))
+    query = ("SELECT * FROM states WHERE states.name = '{}' "
+             "ORDER BY states.id ASC".format(search))
     cursor.execute(query)
 
     # Fetch and display results
