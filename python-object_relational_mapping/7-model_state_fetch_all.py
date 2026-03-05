@@ -14,6 +14,9 @@ if __name__ == "__main__":
         ),
         pool_pre_ping=True
     )
+
+    Base.metadata.bind = engine
+
     # Create session factory bound to the engine, then open a session
     # Session is the "conversation" with the database
     Session = sessionmaker(bind=engine)
