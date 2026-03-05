@@ -29,7 +29,7 @@ if __name__ == "__main__":
         State.name.like('%a%')
     ).order_by(State.id).all()
 
-    for state in states;
+    for state in states:
         print("{}: {}".format(state.id, state.name))
 
     # Close session to release the connection
