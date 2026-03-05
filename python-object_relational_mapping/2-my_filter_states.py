@@ -9,21 +9,22 @@ import sys
 
 
 if __name__ == "__main__":
+    search_state = sys.argv[4]
+    
     # Connect to MySQL server
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=sys.argv[1],
         passwd=sys.argv[2],
-        db=sys.argv[3],
-        search=sys.argv[4]
+        db=sys.argv[3]
     )
 
     # Create a cursor object that sends SQL commands and receives results
     cursor = db.cursor()
     # Execute query
     cursor.execute(
-        "SELECT * FROM states WHERE name = search ORDER BY id ASC"
+        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(search_state)
     )
     # Fetch and display results
     rows = cursor.fetchall()
