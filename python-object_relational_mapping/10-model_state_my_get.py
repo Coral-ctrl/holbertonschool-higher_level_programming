@@ -26,7 +26,7 @@ if __name__ == "__main__":
     session = Session()
 
     state = session.query(State).filter_by(
-        State.name = sys.argv[4]
+        State.name=sys.argv[4]
     )
 
     if states is None:
