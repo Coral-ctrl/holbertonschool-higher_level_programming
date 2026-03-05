@@ -9,7 +9,7 @@ import sys
 
 
 if __name__ == "__main__":
-    search_state = sys.argv[4]
+    search = sys.argv[4]
     
     # Connect to MySQL server
     db = MySQLdb.connect(
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
     # Execute query
     cursor.execute(
-        "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(search_state)
+        f"SELECT * FROM states WHERE name = '{search}' ORDER BY id ASC"
     )
     # Fetch and display results
     rows = cursor.fetchall()
