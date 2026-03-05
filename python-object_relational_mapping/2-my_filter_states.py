@@ -22,8 +22,8 @@ if __name__ == "__main__":
 
     # Execute query
     cursor.execute(
-        "SELECT * FROM states WHERE name = '{}' "
-        "ORDER BY states.id ASC".format(sys.argv[4])
+        ("SELECT * FROM states WHERE name = '{}' "
+        "ORDER BY states.id ASC".format(sys.argv[4]))
     )
 
     # Fetch and display results
