@@ -23,9 +23,8 @@ if __name__ == "__main__":
     # Session is the "conversation" with the database
     Session = sessionmaker(bind=engine)
     session = Session()
-
-    new_state = session.add(State(name="Louisiana")
-
+    new_state = State(name="Louisiana")
+    session.add(new_state)
     session.commit()
     print(new_state.id)
 
