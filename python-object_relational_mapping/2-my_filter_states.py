@@ -9,8 +9,8 @@ import sys
 
 
 if __name__ == "__main__":
-    search = sys.argv[4]
-    
+    search = sys.argv[4]  # Store argument as a Python variable
+
     # Connect to MySQL server
     db = MySQLdb.connect(
         host="localhost",
