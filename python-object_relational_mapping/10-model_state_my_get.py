@@ -27,12 +27,12 @@ if __name__ == "__main__":
 
     state = session.query(State).filter_by(
         State.name=sys.argv[4]
-    )
+    ).first()
 
-    if states is None:
+    if state is None:
         print("Not found")
     else:
-        print("{}".format(state.id))
+        print(state.id)
 
     # Close session to release the connection
     session.close()
