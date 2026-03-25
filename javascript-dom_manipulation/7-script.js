@@ -1,4 +1,3 @@
-#!/usr/bin/node
 fetch('https://swapi-api.hbtn.io/api/films/?format=json')
   .then(response => response.json())
   .then(data => {
@@ -8,4 +7,5 @@ fetch('https://swapi-api.hbtn.io/api/films/?format=json')
       li.textContent = movie.title;
       ul.appendChild(li);
     });
-  });
+  })
+  .catch(error => console.error(error));
